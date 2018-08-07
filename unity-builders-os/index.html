@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UB Website</title>
+<link rel="stylesheet" type="text/css" href="https://conjoined.github.io/LuminaDesign/css/buttons.css">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono|Poppins|Slabo+27px');
+html,body{background-color:black;font-family: 'Oxygen Mono', monospace;}
+.error-monitor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.error {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transition-duration:500ms;
+}
+img.onebigone {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body id="kakarot">
+
+<noscript>
+<div class="error">
+ERROR: Disk boot sector not found
+<br/>
+Enable JavaScript and Refresh to continue
+</div>
+</noscript>
+<div class="error" id="openitalready">
+<br/>
+<p>Select an OS</p>
+<br/>
+<a lumina_link="material" lumina_color="red" padded href="#" onclick="jiggly();noobs()">Windows Unity Builders</a>
+<br/>
+<br/>
+<br/>
+</div>
+<div class="error" id="welcome">
+<br/>
+<p>Starting up...</p>
+<br/>
+<img id="spinny" class="onebigone" width="100px" height="100px" src="https://i.imgur.com/1SLuzM1.png"/>
+</div>
+<script>
+function jiggly() {
+	document.getElementById("openitalready").style.opacity = 0;
+    document.getElementById("openitalready").style.top="70%";
+    setTimeout(function() {document.getElementById("welcome").style.opacity = 1;document.getElementById("welcome").style.top="50%";
+    document.getElementById("openitalready").style.display="none";}, 500)
+}
+setTimeout(function() {document.getElementById("openitalready").style.opacity = 1;document.getElementById("openitalready").style.top="50%";}, 500)
+</script>
+<script>
+function noobs() {
+    document.getElementById("welcome").style.opacity = 1;
+    document.getElementById("welcome").style.top="50%";
+    document.getElementById("kakarot").style.background-color="#cc66ff"
+}
+</script>
+</body>
+</html>
